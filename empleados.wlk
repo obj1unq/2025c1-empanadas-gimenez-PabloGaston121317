@@ -16,12 +16,25 @@ object gimenez{
 object galvan {
 
     var sueldo = 15000
+    var dinero = 0
 
     method sueldo(_sueldo){
         sueldo = _sueldo
     }
 
-    method cobrarSueldo() {}
+    method gastar(cuanto){
+        dinero  -= cuanto
+        
+        
+    }
+
+    method deuda() = dinero.min(0).abs()
+
+    method dinero() = dinero.max(0)
+
+    method cobrarSueldo(){
+        dinero += sueldo
+    }
 
     method sueldo(){
 
